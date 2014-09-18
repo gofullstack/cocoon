@@ -17,10 +17,15 @@ machine."
 
 1. Startup and provision Vagrant, you'll be promped for your local password.
 The rest of this process may take a bit of time the first run, go grab a
-:cookie: and come back.
+:cookie: and come back. You can also export an ENV variable `RECIPE` to specify
+another recipe to provision with other than the default.
 
     ```bash
     $ vagrant up
+    ```
+
+    ```bash
+    $ export RECIPE=elixir && vagrant up
     ```
 
 1. SSH into Vagrant box.
