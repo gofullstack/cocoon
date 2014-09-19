@@ -6,6 +6,7 @@
 #
 
 include_recipe 'cocoon::_postgres'
+include_recipe 'cocoon::_git'
 
 #
 # Download Erlang repo.
