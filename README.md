@@ -28,7 +28,7 @@ The rest of this process may take a bit of time the first run, go grab a
     ```bash
     $ vagrant up
     ```
-    
+
     If you get an error about DHCP server config
 
     ```
@@ -39,7 +39,7 @@ The rest of this process may take a bit of time the first run, go grab a
 
     Stderr: VBoxManage: error: DHCP server already exists
     ```
-    
+
    Then run the following command and then vagrant up again (see https://github.com/mitchellh/vagrant/issues/3083 for details)
 
    ```bash
@@ -59,12 +59,11 @@ The rest of this process may take a bit of time the first run, go grab a
     $ cd code
     $ rails new awesomesauce
     ```
-    
+
     or to use this as a wrapper for an existing project checkout your existing project
-    
+
     ```bash
     $ cd code
-    $ sudo apt-get install git
     $ git clone git@github.com:your/project.git
     ```
 
