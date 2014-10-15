@@ -14,6 +14,12 @@ machine."
     ```bash
     $ vagrant plugin install vagrant-omnibus
     ```
+1. Clone this repo and cd into the directory
+
+    ```bash
+    $ git clone git@github.com:gofullstack/cocoon.git
+    $ cd cocoon
+    ```
 
 1. Startup and provision Vagrant, you'll be promped for your local password.
 The rest of this process may take a bit of time the first run, go grab a
@@ -22,6 +28,24 @@ The rest of this process may take a bit of time the first run, go grab a
     ```bash
     $ vagrant up
     ```
+    
+    If you get an error about DHCP server config
+
+    ```
+    There was an error while executing `VBoxManage`, a CLI used by Vagrant
+    for controlling VirtualBox. The command and stderr is shown below.
+
+    Command: ["dhcpserver", "add", "--ifname", "vboxnet0", "--ip", "172.28.128.2", "--netmask", "255.255.255.0", "--lowerip", "172.28.128.3", "--upperip", "172.28.128.254", "--enable"]
+
+    Stderr: VBoxManage: error: DHCP server already exists
+    ```
+    
+   Then run the following command and then vagrant up again (see https://github.com/mitchellh/vagrant/issues/3083 for details)
+
+   ```bash
+   $ VBoxManage dhcpserver remove --netname HostInterfaceNetworking-vboxnet0
+   $ vagrant up
+   ```
 
 1. SSH into Vagrant box.
 
@@ -34,6 +58,14 @@ The rest of this process may take a bit of time the first run, go grab a
     ```bash
     $ cd code
     $ rails new awesomesauce
+    ```
+    
+    or to use this as a wrapper for an existing project checkout your existing project
+    
+    ```bash
+    $ cd code
+    $ sudo apt-get install git
+    $ git clone git@github.com:your/project.git
     ```
 
 1. Go about your regular Rails development business. Anything in the code
